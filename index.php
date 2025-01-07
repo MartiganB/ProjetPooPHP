@@ -29,8 +29,6 @@ $articles = $resultats->fetchAll();
  * 3. Affichage
  */
 $pageTitle = "Accueil";
-ob_start();
-require('templates/articles/index.html.php');
-$pageContent = ob_get_clean();
+require('libraries/utils.php');
+render('articles/index',compact('pageTitle','articles'));
 
-require('templates/layout.html.php');
